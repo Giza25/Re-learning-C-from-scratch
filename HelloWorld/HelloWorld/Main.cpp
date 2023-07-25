@@ -6,7 +6,8 @@
 
 int main()
 {
-	Log("Hello World!");
+	const char* message = "Hello World!";
+	Log(message);
 	int a = 7;
 	int b = 8;
 	std::cout << Multiply(a, b) << std::endl;
