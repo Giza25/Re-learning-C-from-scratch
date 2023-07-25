@@ -1,4 +1,6 @@
-void Log(const char* message);
+#pragma once
+
+#include "Log.h"
 
 int Multiply(int a, int b)
 {

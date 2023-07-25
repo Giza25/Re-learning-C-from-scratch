@@ -1,12 +1,14 @@
 #include <iostream>
 
-void Log(const char* message);
-int Multiply(int a, int b);
+#include "Log.h"
+#include "Math.h"
 
 
 int main()
 {
 	Log("Hello World!");
-	std::cout << Multiply(7, 8) << std::endl;
+	int a = 7;
+	int b = 8;
+	std::cout << Multiply(a, b) << std::endl;
 	std::cin.get();
 }
