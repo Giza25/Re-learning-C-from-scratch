@@ -1,21 +1,40 @@
 #include <iostream>
 
-class Player
+class Log
 {
+public: 
+	const int logLevelError = 0;
+	const int logLevelWarning = 1;
+	const int logLevelInfo = 2;
+private:
+	int m_LogLevel = logLevelInfo;
 public:
-	int x, y, z = 0;
-	int speedX, speedY, speedZ = 1;
-
-	void Move(int xa, int ya, int za)
+	void SetLogLevel(int level)
 	{
-		x += xa * speedX;
-		y += ya * speedY;
-		z += za * speedZ;
+		m_LogLevel = level;
+	}
+
+	void Error(const char* message)
+	{
+		if (m_LogLevel >= logLevelError)
+			std::cout << "[ERROR]: " << message << std::endl;
+	}
+	void Warn(const char* message)
+	{
+		if (m_LogLevel >= logLevelWarning)
+			std::cout << "[WARNING]: " << message << std::endl;
+	}
+	void Info(const char* message)
+	{
+		if (m_LogLevel >= logLevelInfo)
+			std::cout << "[INFO]: " << message << std::endl;
 	}
 };
 
 int main()
 {
-	Player player1;
-	player1.Move(1, 0, 3);
+	Log log;
+	log.SetLogLevel(log.logLevelWarning);
+	log.Warn("Warning!");
+	std::cin.get();
 }
