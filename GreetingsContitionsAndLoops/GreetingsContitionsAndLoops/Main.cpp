@@ -31,7 +31,12 @@ int main()
 		Log("To the next iteration!");
 		
 	}
+
 	DefinePointerOnStack();
+	Log("===============================");
 	DefinePointerOnHeap();
+	Log("===============================");
+	DefineReference();
+
 	std::cin.get();
 }
