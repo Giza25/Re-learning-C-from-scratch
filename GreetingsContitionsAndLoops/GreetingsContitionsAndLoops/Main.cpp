@@ -4,19 +4,31 @@
 
 int main()
 {
-	int a = 1;
-	bool comparisonResult = a == 0;
-	if (comparisonResult)
+	int a = 0;
+	for (int i = 0; true; i++, a++)
 	{
-		Log("True");
-	}
-	else if (a == 1)
-	{
-		Log("Still true!");
-	}
-	else
-	{
-		Log("False");
+		Log(i);
+		bool comparisonResult = a == 4;
+		if (i == 5)
+		{
+			Log("End of a loop!");
+			break;
+		}
+		if (comparisonResult)
+		{
+			Log("True");
+		}
+		else if (a == 1 || a == 3)
+		{
+			Log("Also true!");
+			continue;
+		}
+		else
+		{
+			Log("False");
+		}
+		Log("To the next iteration!");
+		
 	}
 	std::cin.get();
 }
