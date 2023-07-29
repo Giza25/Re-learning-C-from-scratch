@@ -2,20 +2,26 @@
 
 #include "Log.h"
 
-void IncrementByPointer(int* value)
+
+void IncrementByPointer(int* value) // Takes pointer of a variable in order to change data in the memory.
 {
 	(*value)++;
 }
-void IncrementByReference(int& value)
+
+void IncrementByReference(int& value) // Creating a reference to a veriable, an alias, to acsess the data without having to search for a memory adress.
 {
 	value++;
 }
+
+
 
 void DefinePointerOnStack()
 {
 	int var = 9;
 	int* ptr = &var;
-	(*ptr)++; // Have to use brackets to define order of operations for compiler.
+
+	(*ptr)++; // Have to use dereference first.
+
 	Log(*ptr);
 }
 
@@ -36,8 +42,10 @@ void DefineReference()
 	int a = 5;
 	int& ref = a; // Basically creating an alias.
 	ref = 2;
+
 	IncrementByPointer(&a);
 	Log(a);
+
 	IncrementByReference(a);
 	Log(a);
 }
