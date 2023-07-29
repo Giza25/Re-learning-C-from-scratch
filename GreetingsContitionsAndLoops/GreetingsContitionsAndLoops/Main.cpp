@@ -1,6 +1,7 @@
 #include <iostream>
 
 #include "Log.h"
+#include "Pointers.h"
 
 int main()
 {
@@ -30,5 +31,7 @@ int main()
 		Log("To the next iteration!");
 		
 	}
+	DefinePointerOnStack();
+	DefinePointerOnHeap();
 	std::cin.get();
 }
