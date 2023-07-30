@@ -10,6 +10,18 @@ public:
 private:
 	Level m_LogLevel = LevelInfo;
 public:
+
+	Log()
+	{
+		m_LogLevel = LevelInfo;
+	}
+
+	Log(Level level)
+	{
+		m_LogLevel = level;
+	}
+
+
 	void SetLogLevel(Level level)
 	{
 		m_LogLevel = level;
@@ -35,7 +47,9 @@ public:
 int main()
 {
 	Log log;
-	log.SetLogLevel(Log::LevelError);
+	//log.SetLogLevel(Log::LevelWarning);
+	log.Error("Error!");
 	log.Warn("Warning!");
+	log.Info("Information!");
 	std::cin.get();
 }
