@@ -72,6 +72,11 @@ public:
 	}
 };
 
+void Print(Printable* obj)
+{
+	std::cout << obj->GetClassName() << std::endl;
+}
+
 int main()
 {
 	Log log;
@@ -82,6 +87,7 @@ int main()
 
 	std::cout << "=============================" << std::endl;
 
+
 	Entity* entity = new Entity();
 	log.Info(entity->GetName());
 
@@ -90,6 +96,12 @@ int main()
 
 	Entity* entityP = player;
 	log.Info(entityP->GetName());
+
+	std::cout << "=============================" << std::endl;
+
+
+	Print(entity);
+	Print(player);
 
 	std::cin.get();
 }
