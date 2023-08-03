@@ -2,13 +2,13 @@
 
 #include <string>
 
-class Printable
+class IPrintable
 {
 public:
 	virtual std::string GetClassName() = 0;
 };
 
-class Entity : public Printable
+class Entity : public IPrintable
 {
 public:
 	virtual std::string GetName() { return "Entity"; }

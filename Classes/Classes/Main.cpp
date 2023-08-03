@@ -26,40 +26,40 @@ public:
 	}
 
 
-	void SetLogLevel(Level level)
+	void SetLogLevel(const Level& level)
 	{
 		m_LogLevel = level;
 	}
 
 
-	void Error(const char* message)
+	void Error(const char* message) const
 	{
 		if (m_LogLevel >= LevelError)
 			std::cout << "[ERROR]: " << message << std::endl;
 	}
-	void Error(std::string message)
+	void Error(const std::string& message) const
 	{
 		if (m_LogLevel >= LevelError)
 			std::cout << "[ERROR]: " << message << std::endl;
 	}
 
-	void Warn(const char* message)
+	void Warn(const char* message) const
 	{
 		if (m_LogLevel >= LevelWarning)
 			std::cout << "[WARNING]: " << message << std::endl;
 	}
-	void Warn(std::string message)
+	void Warn(const std::string& message) const
 	{
 		if (m_LogLevel >= LevelWarning)
 			std::cout << "[WARNING]: " << message << std::endl;
 	}
 
-	void Info(const char* message)
+	void Info(const char* message) const
 	{
 		if (m_LogLevel >= LevelInfo)
 			std::cout << "[INFO]: " << message << std::endl;
 	}
-	void Info(std::string message)
+	void Info(const std::string& message) const
 	{
 		if (m_LogLevel >= LevelInfo)
 			std::cout << "[INFO]: " << message << std::endl;
@@ -72,7 +72,7 @@ public:
 	}
 };
 
-void Print(Printable* obj)
+void Print(IPrintable* obj)
 {
 	std::cout << obj->GetClassName() << std::endl;
 }
@@ -99,7 +99,7 @@ int main()
 
 	std::cout << "=============================" << std::endl;
 
-
+	
 	Print(entity);
 	Print(player);
 
