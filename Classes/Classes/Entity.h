@@ -10,8 +10,15 @@ public:
 
 class Entity : public IPrintable
 {
+private:
+	std::string m_Name;
 public:
-	virtual std::string GetName() { return "Entity"; }
+	Entity()
+		: m_Name("Unknown") {}
+	Entity(const std::string& name)
+		: m_Name(name) {}
+
+	virtual const std::string& GetName() const { return m_Name; }
 	std::string GetClassName() override { return "Entity"; }
 };
 
@@ -23,6 +30,6 @@ public:
 	Player(const std::string& name)
 		: m_Name(name) {}
 
-	std::string GetName() override { return m_Name; }
+	const std::string& GetName() const override { return m_Name; }
 	std::string GetClassName() override { return "Player"; }
 };
