@@ -64,7 +64,11 @@ public:
 		if (m_LogLevel >= LevelInfo)
 			std::cout << "[INFO]: " << message << std::endl;
 	}
-
+	void Info(const int& message) const
+	{
+		if (m_LogLevel >= LevelInfo)
+			std::cout << "[INFO]: " << message << std::endl;
+	}
 
 	~Log()
 	{
@@ -76,6 +80,7 @@ void Print(IPrintable* obj)
 {
 	std::cout << obj->GetClassName() << std::endl;
 }
+
 
 int main()
 {
@@ -97,11 +102,16 @@ int main()
 	Entity* entityP = player;
 	log.Info(entityP->GetName());
 
+	Player* player2 = new Player("Hinfe", 23);
+	log.Info(player2->GetAge());
+
 	std::cout << "=============================" << std::endl;
 
 	
 	Print(entity);
 	Print(player);
+
+	delete entity, player;
 
 	std::cin.get();
 }
