@@ -42,12 +42,19 @@ std::ostream& operator<<(std::ostream& stream, const String& string)
 	return stream;
 }
 
+void PrintString(const String& string)    //Important to pass by reference to avoid unnesessary copying
+{
+	std::cout << string << std::endl;
+	return;
+}
+
 int main()
 {
 	String string = "Giza";
 	String second = string;
 	second[0] = 'J';
-	std::cout << string << std::endl;
-	std::cout << second << std::endl;
+	
+	PrintString(string);
+	PrintString(second);
 	std::cin.get();
 }
