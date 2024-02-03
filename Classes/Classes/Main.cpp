@@ -111,7 +111,7 @@ int main()
 	Print(entity);
 	Print(player);
 
-	delete entity, player;
+	delete entity, player, entityP, player2;
 
 	std::cin.get();
 }
